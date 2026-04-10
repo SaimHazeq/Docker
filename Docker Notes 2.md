@@ -52,20 +52,20 @@ User gives commands and it will be executed by docker client
 
 ## **ARCHITECTURE OF DOCKER:**
 ```bash
-yum install docker -y #client
-systemctl start docker #client, Engine
+yum install docker -y   #client
+systemctl start docker  #client, Engine
 systemctl status docker
 ```
 
 COMMANDS:
 
 ```bash
-docker pull ubuntu    #pull ubuntu image
-docker images         #to see list of images
-docker run –it --name cont1 ubuntu   #to create a container
--it (interactive)     #to go inside a container
-cat /etc/os-release   #to see os flavor
-apt update -y         #to update
+docker pull ubuntu                    #pull ubuntu image
+docker images                         #to see list of images
+docker run –it --name cont1 ubuntu    #to create a container
+-it (interactive)                     #to go inside a container
+cat /etc/os-release                   #to see os flavor
+apt update -y                         #to update
 ```
 redhat = yum                                                              
 ubuntu = apt                                                               
@@ -85,8 +85,8 @@ docker pause cont_name    #to pause container
 docker unpause cont_name  #to unpause container
 docker inspect cont_name  #to get complete info of a container
 docker rm cont_name       #to delete a container
-STOP       #will wait to finish all process running inside container
-KILL       #won’t wait to finish all process running inside container
+STOP                      #will wait to finish all process running inside container
+KILL                      #won’t wait to finish all process running inside container
 ```
 
 ## **OS LEVEL OFVIRTUALIZATION:**
@@ -341,25 +341,25 @@ services:
 
 **COMMANDS:**
 ```bash
-docker-compose up -d    #to create and start all containers
-docker-compose stop     #to stop all containers
-docker-compose start    #to start all containers
-docker-compose kill     #to kill all containers
-docker-compose rm       #to delete all containers
-docker-compose down     #to stop and delete all containers
-docker-compose pause    #to pause all containers
-docker-compose unpause  #to unpause all containers
-docker-compose ps -a    #to list the containers managed by compose
+docker-compose up -d                  #to create and start all containers
+docker-compose stop                   #to stop all containers
+docker-compose start                  #to start all containers
+docker-compose kill                   #to kill all containers
+docker-compose rm                     #to delete all containers
+docker-compose down                   #to stop and delete all containers
+docker-compose pause                  #to pause all containers
+docker-compose unpause                #to unpause all containers
+docker-compose ps -a                  #to list the containers managed by compose
 file
-docker-compose images   #to list the images managed by compose
+docker-compose images                 #to list the images managed by compose
 file
-docker-compose logs     #to show logs of docker compose
-docker-compose top      #to show the process of compose containers
-docker-compose restart  #to restart all the compose containers
-docker-compose scale cont_name=10   #to scale the service
+docker-compose logs                   #to show logs of docker compose
+docker-compose top                    #to show the process of compose containers
+docker-compose restart                #to restart all the compose containers
+docker-compose scale cont_name=10     #to scale the service
 
-#CHANGING THE DEFAULT FILE
-#By default the docker-compose will support the following names
+**#CHANGING THE DEFAULT FILE
+#By default the docker-compose will support the following names**
 
 docker-compose.yml, docker-compose.yaml,
 compose.yml, compose.yaml
@@ -435,14 +435,14 @@ Service --> Containers --> Distributed to nodes
 `docker service create --name container_name --replicas 3 -p 81:80
 saimhazeq/container_name:latest`
 ```bash
-docker service ls               #to list services
-docker service inspect movies   #to get complete information of service
-docker service ps movies        #to list the containers of movies
-docker service scale movies=10  #to scale in the containers
-docker service scale movies=3   #to scale out the containers
-docker service rollback movies  #to go previous state
-docker service logs movies      #to see the logs
-docker service rm movies        #to delete all services
+docker service ls                 #to list services
+docker service inspect movies     #to get complete information of service
+docker service ps movies          #to list the containers of movies
+docker service scale movies=10    #to scale in the containers
+docker service scale movies=3     #to scale out the containers
+docker service rollback movies    #to go previous state
+docker service logs movies        #to see the logs
+docker service rm movies          #to delete all services
 ```
 When scale down It follows LIFO pattern.                                   
 LIFO = LAST-IN-FIRST-OUT 
@@ -453,11 +453,11 @@ It is called as Self-Healing.
 
 ## **CLUSTER ACTIVITIES:**
 ```bash
-docker swarm leave (worker)        #to make node inactive from cluster
+docker swarm leave (worker)            #to make node inactive from cluster
 #To active the node copy the token.
-docker node rm node_id (manager)   #to delete worker node which is on down state
-docker node inspect node_id        #to get complete info of worker node
-docker swarm join-token (manager)  #to generate the token to join
+docker node rm node_id (manager)       #to delete worker node which is on down state
+docker node inspect node_id            #to get complete info of worker node
+docker swarm join-token (manager)      #to generate the token to join
 ```
 **Note:**
 We can’t delete the node which is ready state.                              
@@ -486,15 +486,13 @@ When you want your container IP and EC2 instance IP same then you use host netwo
 When you don’t want the container to get exposed to the world, we use none network.                                                                    
 It will notprovide any network to our container.
 ```bash
-docker network create network_name   #to create a network
-docker network rm network_name       #to see the list
-docker network inspect network_name  #to inspect
-docker network connect network_name container_id/name
-                                     #to connect a container to the network
+docker network create network_name                       #to create a network
+docker network rm network_name                           #to see the list
+docker network inspect network_name                      #to inspect
+docker network connect network_name container_id/name    #to connect a container to the network
 docker exec -it container1 container_name /bin/bash
 apt update
-apt install iputils-ping -y          #command to install ping checks
+apt install iputils-ping -y                              #command to install ping checks
 ping ip_address of container2
-docker network disconnect network_name container_name
-                                    #To disconnect from the container
+docker network disconnect network_name container_name    #To disconnect from the container
 docker network prune : to prune
