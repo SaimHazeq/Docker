@@ -33,6 +33,8 @@ Server (VM) ≠ Container
 - Written in Go                                                                  
 - Released in 2013 by Solomon Hykes                                              
 - Enables building, shipping, and running applications consistently
+
+
 **Key Features**                                                                 
 - Platform-independent                                                           
 - Uses host system resources (CPU, Memory, Network)                              
