@@ -8,8 +8,8 @@ This repository contains structured notes and hands-on commands for understandin
 - All services run on a single server                                            
 - Uses a single database                                                         
 - Simple but hard to scale and maintain
-**Microservices Architecture**
-                                                  
+
+**Microservices Architecture**                                
 - Services are distributed across multiple servers                               
 - Each service may have its own database                                         
 - Scalable and flexible but increases complexity                          
