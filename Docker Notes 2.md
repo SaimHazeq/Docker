@@ -219,10 +219,10 @@ docker network create mynet
 docker network connect mynet container1
 ```
 ## ⚠️ Key Notes
-- Containers are ephemeral → use volumes for persistence                         
-- Prefer Dockerfile over manual commits                                          
-- Use Compose for multi-container setups                                        
-- Use Swarm/Kubernetes for production orchestration                
+- Containers are **ephemeral** → use volumes for persistence                     
+- Prefer **Dockerfile over manual commits**                                      
+- Use **Compose for multi-container setups**                                     
+- Use **Swarm/Kubernetes for production orchestration**                
 ## 📚 Summary
 
 This guide covers:                                                            
