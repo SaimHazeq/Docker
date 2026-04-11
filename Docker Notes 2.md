@@ -21,7 +21,8 @@ This repository contains structured notes and hands-on commands for understandin
 ## 📦 Containers
 - Lightweight, isolated environments to run applications                         
 - Share the host OS kernel (unlike VMs)                                          
-- Faster and more efficient than virtual machines                              **✅ Key Idea:**                                                               
+- Faster and more efficient than virtual machines
+**✅ Key Idea:**                                                               
 Server (VM) ≠ Container                                                    
 - VM → Full OS                                                                   
 - Container → Uses host OS                                                       
