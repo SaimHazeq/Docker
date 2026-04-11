@@ -396,7 +396,7 @@ nginx (web server)
 redis (database)
 
 ## 📄 docker-compose.yml
-
+```
 version: "3.9"
 
 services:
@@ -421,6 +421,7 @@ services:
 networks:
   app-network:
     driver: bridge
+```
 
 
 ## 📘 What it does
@@ -437,35 +438,42 @@ Mounts ./html folder from your host to /usr/share/nginx/html in the container
 💻 Docker Compose Commands for Demo
 
 ### 🧱 1️⃣ Build and start all services
-
+```
 docker compose up -d
-
+```
 
 ✅ Runs containers in background (-d = detached mode)
 
 ### 🧾 2️⃣ View running containers
+```
 docker compose ps
-
+```
 ### 📜 3️⃣ View container logs (real-time)
+```
 docker compose logs -f
-
+```
 ### 🔍 4️⃣ Check logs of a single service
+```
 docker compose logs web
-
+```
 ### 🧠 5️⃣ Execute command inside container
 docker compose exec web ls /usr/share/nginx/html
 
 ### 🧩 6️⃣ Stop containers (without removing)
+```
 docker compose stop
-
+```
 ### 🧹 7️⃣ Remove containers, networks, volumes
+```
 docker compose down
-
+```
 ### 🔄 8️⃣ Restart services
+```
 docker compose restart
-
+```
 ### 🧰 9️⃣ Scale services (great demo)
+```
 docker compose up -d --scale web=3
-
+```
 
 This creates 3 NGINX containers (load-balanced via Docker network).
