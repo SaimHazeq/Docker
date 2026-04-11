@@ -4,11 +4,11 @@
 This repository contains structured notes and hands-on commands for understanding Docker, containerization, and orchestration concepts used in modern DevOps environments.
 
 ## 🏗️ Application Architectures
-**Monolithic Architecture**                                                        
+**Monolithic Architecture**                                                      
 - All services run on a single server                                            
 - Uses a single database                                                         
-- Simple but hard to scale and maintain                                          
-**Microservices Architecture**                                                   
+- Simple but hard to scale and maintain
+**Microservices Architecture**                                                 
 - Services are distributed across multiple servers                               
 - Each service may have its own database                                         
 - Scalable and flexible but increases complexity                          
@@ -21,8 +21,7 @@ This repository contains structured notes and hands-on commands for understandin
 ## 📦 Containers
 - Lightweight, isolated environments to run applications                         
 - Share the host OS kernel (unlike VMs)                                          
-- Faster and more efficient than virtual machines                            
-**✅ Key Idea: **                                                               
+- Faster and more efficient than virtual machines                              **✅ Key Idea:**                                                               
 Server (VM) ≠ Container                                                    
 - VM → Full OS                                                                   
 - Container → Uses host OS                                                       
@@ -30,13 +29,16 @@ Server (VM) ≠ Container
 - Open-source platform for containerization                                      
 - Written in Go                                                                  
 - Released in 2013 by Solomon Hykes                                              
-- Enables building, shipping, and running applications consistently              
+- Enables building, shipping, and running applications consistently
 **Key Features**                                                                 
 - Platform-independent                                                           
 - Uses host system resources (CPU, Memory, Network)                              
 - Works best on Linux-based systems                                              
 ## 📦 Containerization
-Packaging an application with all its dependencies                               Example:                                                                         - App → PUBG                                                                     - Dependency → Maps                                                              
+Packaging an application with all its dependencies.                             
+Example:
+- App → PUBG
+- Dependency → Maps 
 ## 🖥️ Virtualization
 Creating virtual resources (VMs) using physical hardware.  
 ## ⚙️ Docker Architecture
@@ -46,7 +48,7 @@ Creating virtual resources (VMs) using physical hardware.
 - Registry → Stores Docker images (e.g., Docker Hub)                             
 ## 🚀 Basic Installation (Linux)
 ```bash
-yum install docker -y
+apt install docker -y
 systemctl start docker
 systemctl status docker
 ```
@@ -177,8 +179,9 @@ docker pull username/myapp
 Container orchestration tool.                                                    
 
 **Key Concepts**                                                        
-- **Manager Node** → Controls cluster                                            
-- **Worker Node** → Runs containers                                                  
+- **Manager Node** → Controls cluster
+- **Worker Node** → Runs containers
+
 **Initialize Swarm**
 ```
 docker swarm init
