@@ -457,8 +457,9 @@ docker compose logs -f
 docker compose logs web
 ```
 ### 🧠 5️⃣ Execute command inside container
+```
 docker compose exec web ls /usr/share/nginx/html
-
+```
 ### 🧩 6️⃣ Stop containers (without removing)
 ```
 docker compose stop
