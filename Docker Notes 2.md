@@ -40,8 +40,9 @@ Server (VM) ≠ Container
 - Uses host system resources (CPU, Memory, Network)                              
 - Works best on Linux-based systems                                              
 ## 📦 Containerization
-Packaging an application with all its dependencies.                             
-Example:
+Packaging an application with all its dependencies.
+
+**Example:**
 - App → PUBG
 - Dependency → Maps 
 ## 🖥️ Virtualization
