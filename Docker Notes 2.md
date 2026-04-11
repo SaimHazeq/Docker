@@ -48,10 +48,10 @@ Packaging an application with all its dependencies.
 ## 🖥️ Virtualization
 Creating virtual resources (VMs) using physical hardware.  
 ## ⚙️ Docker Architecture
-- Client → Sends commands                                                        
-- Docker Daemon → Manages containers, images                                     
-- Host → System where Docker runs                                               
-- Registry → Stores Docker images (e.g., Docker Hub)                             
+- **Client** → Sends commands                                                    
+- **Docker Daemon** → Manages containers, images                                 
+- **Host** → System where Docker runs                                            
+- **Registry** → Stores Docker images (e.g., Docker Hub)                             
 ## 🚀 Basic Installation (Linux)
 ```bash
 apt install docker -y
