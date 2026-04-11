@@ -4,46 +4,46 @@
 This repository contains structured notes and hands-on commands for understanding Docker, containerization, and orchestration concepts used in modern DevOps environments.
 
 ## 🏗️ Application Architectures
-Monolithic Architecture                                                        
-All services run on a single server                                              
-Uses a single database                                                          
-Simple but hard to scale and maintain                                            
-Microservices Architecture                                                       
-Services are distributed across multiple servers                                 
-Each service may have its own database                                           
-Scalable and flexible but increases complexity                          
+**Monolithic Architecture**                                                        
+- All services run on a single server                                            
+- Uses a single database                                                         
+- Simple but hard to scale and maintain                                          
+**Microservices Architecture**                                                   
+- Services are distributed across multiple servers                               
+- Each service may have its own database                                         
+- Scalable and flexible but increases complexity                          
 
 ⚠️ Choose architecture based on:
-Application complexity                                                        
-User load                                                                        
-Cost                                                                        
-Maintenance overhead                                                             
+- Application complexity                                                        
+- User load                                                                      
+- Cost                                                                        
+- Maintenance overhead                                                             
 ## 📦 Containers
-Lightweight, isolated environments to run applications                           
-Share the host OS kernel (unlike VMs)                                            
-Faster and more efficient than virtual machines                            
-✅ Key Idea:                                                                   
+- Lightweight, isolated environments to run applications                         
+- Share the host OS kernel (unlike VMs)                                          
+- Faster and more efficient than virtual machines                            
+**✅ Key Idea: **                                                               
 Server (VM) ≠ Container                                                    
-VM → Full OS                                                                     
-Container → Uses host OS                                                         
+- VM → Full OS                                                                   
+- Container → Uses host OS                                                       
 ## 🐳 Docker
-Open-source platform for containerization                                        
-Written in Go                                                                   
-Released in 2013 by Solomon Hykes                                                
-Enables building, shipping, and running applications consistently                
-Key Features                                                                   
-Platform-independent                                                            
-Uses host system resources (CPU, Memory, Network)                                
-Works best on Linux-based systems                                                
+- Open-source platform for containerization                                      
+- Written in Go                                                                  
+- Released in 2013 by Solomon Hykes                                              
+- Enables building, shipping, and running applications consistently              
+**Key Features**                                                                 
+- Platform-independent                                                           
+- Uses host system resources (CPU, Memory, Network)                              
+- Works best on Linux-based systems                                              
 ## 📦 Containerization
-Packaging an application with all its dependencies.                              Example:                                                                         App → PUBG                                                                       Dependency → Maps                                                                
+Packaging an application with all its dependencies                               Example:                                                                         - App → PUBG                                                                     - Dependency → Maps                                                              
 ## 🖥️ Virtualization
 Creating virtual resources (VMs) using physical hardware.  
 ## ⚙️ Docker Architecture
-Client → Sends commands                                                          
-Docker Daemon → Manages containers, images                                       
-Host → System where Docker runs                                                 
-Registry → Stores Docker images (e.g., Docker Hub)                               
+- Client → Sends commands                                                        
+- Docker Daemon → Manages containers, images                                     
+- Host → System where Docker runs                                               
+- Registry → Stores Docker images (e.g., Docker Hub)                             
 ## 🚀 Basic Installation (Linux)
 ```bash
 yum install docker -y
@@ -93,7 +93,7 @@ Automated way to build Docker images.
 | ENV         | Environment variables         |
 | EXPOSE      | Define port                   |
 
-Example Dockerfile
+**Example Dockerfile:**
 ```bash
 FROM ubuntu
 
@@ -104,7 +104,7 @@ COPY index.html /var/www/html/
 
 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
 ```
-Build & Run
+**Build & Run**
 ```bash
 docker build -t myapp:v1 .
 docker run -d -p 80:80 myapp:v1
@@ -138,7 +138,7 @@ docker run -d \
 
 Used to manage multi-container applications.                                    
 
-Example **docker-compose.yml**
+**Example** docker-compose.yml
 ```
 version: "3.8"
 
@@ -170,15 +170,15 @@ docker push username/myapp
 docker pull username/myapp
 ```
 ## 🧠 High Availability
-Multiple servers running the same app                                            
-Ensures uptime if one server fails                                            
+- Multiple servers running the same app                                          
+- Ensures uptime if one server fails                                            
 ## 🐝 Docker Swarm
 
 Container orchestration tool.                                                    
 
 **Key Concepts**                                                        
-Manager Node → Controls cluster                                                
-Worker Node → Runs containers                                                  
+- **Manager Node** → Controls cluster                                            
+- **Worker Node** → Runs containers                                                  
 **Initialize Swarm**
 ```
 docker swarm init
@@ -210,16 +210,16 @@ docker network create mynet
 docker network connect mynet container1
 ```
 ## ⚠️ Key Notes
-Containers are ephemeral → use volumes for persistence                           
-Prefer Dockerfile over manual commits                                            
-Use Compose for multi-container setups                                        
-Use Swarm/Kubernetes for production orchestration                
+- Containers are ephemeral → use volumes for persistence                         
+- Prefer Dockerfile over manual commits                                          
+- Use Compose for multi-container setups                                        
+- Use Swarm/Kubernetes for production orchestration                
 ## 📚 Summary
 
 This guide covers:                                                            
 
-Docker fundamentals                                                              
-Container lifecycle                                                            
-Image creation                                                                  
-Volumes & networking                                                            
-Compose & Swarm                                                                  
+- Docker fundamentals                                                            
+- Container lifecycle                                                            
+- Image creation                                                                 
+- Volumes & networking                                                           
+- Compose & Swarm                                                                  
