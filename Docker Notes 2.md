@@ -7,8 +7,7 @@ This repository contains structured notes and hands-on commands for understandin
 **Monolithic Architecture**                                                      
 - All services run on a single server                                            
 - Uses a single database                                                         
-- Simple but hard to scale and maintain
-**Microservices Architecture**                                                 
+- Simple but hard to scale and maintain                            **Microservices Architecture**                                                 
 - Services are distributed across multiple servers                               
 - Each service may have its own database                                         
 - Scalable and flexible but increases complexity                          
@@ -21,8 +20,7 @@ This repository contains structured notes and hands-on commands for understandin
 ## 📦 Containers
 - Lightweight, isolated environments to run applications                         
 - Share the host OS kernel (unlike VMs)                                          
-- Faster and more efficient than virtual machines
-**✅ Key Idea:**                                                               
+- Faster and more efficient than virtual machines                            **✅ Key Idea:**                                                               
 Server (VM) ≠ Container                                                    
 - VM → Full OS                                                                   
 - Container → Uses host OS                                                       
