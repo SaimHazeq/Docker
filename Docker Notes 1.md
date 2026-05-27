@@ -132,7 +132,7 @@ Docker networks allow containers to communicate with each other or the host mach
         
 2. **Host Network**:
     - When you want your containers IP and EC2 instance IP same then you use Host network.
-    - - Removes network isolation and directly attaches container network to the host.
+    - Removes network isolation and directly attaches container network to the host.
     
     - Example:
         
@@ -221,7 +221,12 @@ Docker networks allow containers to communicate with each other or the host mach
 
 ## **4. Docker Volumes for Data Persistence**
 
-Docker volumes persist data beyond the container lifecycle, making them essential for databases and applications with stateful data.
+- It is used to store data inside container.
+- Volume is a simple directory inside container.
+- Containers uses host resources (cpu, ram, rom)
+- Single containers can be shared to multiple containers.
+- At a time we can share single volume to single container only.
+- Docker volumes persist data beyond the container lifecycle, making them essential for databases and applications with stateful data.
 
 ### **Types of Volumes**
 
@@ -296,6 +301,12 @@ Docker volumes persist data beyond the container lifecycle, making them essentia
 
 ## **5. Building Docker Images with Dockerfile**
 
+- It is an Automation way to create image.
+- Here we use Components to create image.
+- In Dockerfile D must be capital.
+- This Dockerfile will be reusable.
+- Here we can create image directly without container help.
+- Name = Dockerfile
 A Dockerfile is a script that defines the steps to build a Docker image.
 
 ### **Dockerfile Commands**
@@ -304,9 +315,13 @@ A Dockerfile is a script that defines the steps to build a Docker image.
 - **RUN**: Executes a command and creates a new image layer.
 - **COPY**: Copies files from the host into the container.
 - **WORKDIR**: Sets the working directory.
-- **EXPOSE**: Exposes a port.
-- **CMD**: Sets the default command.
+- **EXPOSE**: Exposes a port, To give port number.
+- **CMD**: Sets the default command. (After container creation)
 - **ENTRYPOINT**: Configures the container to run as an executable.
+- **ADD**: To copy internet files to container
+- **LABEL**: To add labels for Docker images.
+- **ENV**: To set environment variables (inside container)
+- **ARGS**: To pass environment variables (outside container)
 
 ### **Example Dockerfile**
 
