@@ -565,21 +565,23 @@ This creates 3 NGINX containers (load-balanced via Docker network).
 
 ### `Create Token`
 
-`docker swarm init`
+```
+docker swarm init
+```
 
 ### **Service**
 - It's way of exposing and managing multiple containers.
 - In service we can create copy of containers.
 - That container copies will be distributed to all the nodes.
 
-  ```text
+  `
   Service → Containers → Distributed to nodes
-  ```
+  `
 ### **Service Commands**
    ```bash
-  docker service ls          : to list services
-  docker service inspect <service_name>  : to get complete info of service
-  docker service ps <service_name>   : to list the containers of that service
+  docker service ls                         : to list services
+  docker service inspect <service_name>     : to get complete info of service
+  docker service ps <service_name>          : to list the containers of that service
   docker service scale <service_name>=10    : to scale in the containers
   docker service rollback <service_name>    : to go previous state
   docker service logs <service_name>        : to see the logs
