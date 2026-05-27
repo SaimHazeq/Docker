@@ -117,7 +117,9 @@ Docker networks allow containers to communicate with each other or the host mach
 ### **Types of Docker Networks**
 
 1. **Bridge Network (Default)**:
-    - A private network on the host that containers can connect to by name.
+    - It is a default network that containers will communicate with each other within the same host.
+    -  A private network on the host that containers can connect to by name.
+    
     - Example:
         
         ```bash
@@ -129,7 +131,9 @@ Docker networks allow containers to communicate with each other or the host mach
         ```
         
 2. **Host Network**:
-    - Removes network isolation and directly attaches container network to the host.
+    - When you want your containers IP and EC2 instance IP same then you use Host network.
+    - - Removes network isolation and directly attaches container network to the host.
+    
     - Example:
         
         ```bash
@@ -140,7 +144,9 @@ Docker networks allow containers to communicate with each other or the host mach
         
     - **Use Case**: Ideal for applications that need full network access, but it’s less isolated.
 3. **Overlay Network**:
-    - Used in Docker Swarm for container communication across multiple hosts.
+     - Used to communicate containers with each other across the multiple docker host.
+     - Used in Docker Swarm for container communication across multiple hosts.
+   
     - Example:
         
         ```bash
@@ -152,6 +158,7 @@ Docker networks allow containers to communicate with each other or the host mach
     - **Use Case**: Useful for multi-host container orchestration.
 4. **None Network**:
     - Completely disables networking for the container.
+    - When you don't want the containers to get exposed to the world, we use none network. it will not provide any network to our containers.
     - Example:
         
         ```bash
@@ -163,6 +170,14 @@ Docker networks allow containers to communicate with each other or the host mach
         
 
 ### **Network Commands**
+
+- **Create Networks**:
+    
+    ```bash
+    
+    docker network create <network_name>
+    
+    ```
 
 - **List Networks**:
     
@@ -179,7 +194,20 @@ Docker networks allow containers to communicate with each other or the host mach
     docker network inspect <network_name>
     
     ```
+   - **Connect to Networks**:
     
+    ```bash
+    
+    docker network connect <network_name> <container_id>/name
+    
+    ```
+    - **Disconnect Networks**:
+    
+    ```bash
+    
+    docker network disconnect <network_name> <container_name>
+    
+    ```
 - **Remove a Network**:
     
     ```bash
