@@ -441,18 +441,24 @@ CMD ["python", "app.py"]
   ```bash
     docker inspect <container_name> | grep -i volume  
   ```
-```bash
+  ```bash
     docker system prune    : to remove unused objects of docker
   ```
 - Containers uses our host resources (cpu, mem)
 - By default we don't have any limits for containers
 - We need to set it
-```bash
+  ```bash
     docker run --name <container_name> --memory="200mb" --cpus="0.2" ubuntu
   ```
 ---
 
 ## 🧩 Docker Compose File (YAML only)
+
+- It's a tool used to manage multiple containers in single host.
+- We can create, start, stop and delete all containers together.
+- We write container information in a file called Compose file.
+- Inside the Compose file we can give images, ports, and volumes info of containers.
+- We need to download this tool to use.
 
 This example runs two containers:
 
@@ -543,3 +549,47 @@ docker compose up -d --scale web=3
 ```
 
 This creates 3 NGINX containers (load-balanced via Docker network).
+
+## 🤖 Docker Swarm
+
+- It's an orchestration tool for containers.
+- Used to manage multiple containers on multiple servers.
+- Here we create a cluster (group of servers).
+- In that cluster we can create same container on multiple servers.
+- Here we have the manager node and worker node.
+- Manager node's main purpose is to maintain the container.
+- Withour Docker enginer we can't create the cluster.
+- Port = 2377
+- Worker node will join on cluster by using a toker.
+- Manager node will give the toker.
+
+### `Create Token`
+
+`docker swarm init`
+
+### **Service**
+- It's way of exposing and managing multiple containers.
+- In service we can create copy of containers.
+- That container copies will be distributed to all the nodes.
+
+  ```text
+  Service → Containers → Distributed to nodes
+  ```
+### **Service Commands**
+   ```bash
+  docker service ls          : to list services
+  docker service inspect <service_name>  : to get complete info of service
+  docker service ps <service_name>   : to list the containers of that service
+  docker service scale <service_name>=10    : to scale in the containers
+  docker service rollback <service_name>    : to go previous state
+  docker service logs <service_name>        : to see the logs
+  docker service rm <service_name>          : to delete service
+  ```
+
+### **Cluster Activities**
+  ```bash
+docker swarm leave (worker)     : to make node inactive from cluster
+docker node rm <node_id>        : to delete worker node which is on down state
+docker node inspect <node_id>   : to get complete info of worker node
+docker swarm join-toker         : to generate the toker to join
+```
