@@ -430,6 +430,22 @@ CMD ["python", "app.py"]
 
 `docker rmi $(docker images -q)`
 
+### **Docker System Commands**
+
+  ```bash
+    docker system df       : to give info of docker objects
+  ```
+  ```bash
+    docker system df -v    : to give overview of docker disk usage
+  ```
+  ```bash
+    docker inspect <container_name> | grep -i volume : 
+  ```
+  ```bash
+    docker system prune    : to remove unused objects of docker
+  ```
+---
+
 ## 🧩 Docker Compose File (YAML only)
 
 This example runs two containers:
