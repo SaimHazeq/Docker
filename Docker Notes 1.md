@@ -439,7 +439,10 @@ CMD ["python", "app.py"]
     docker system df -v    : to give overview of docker disk usage
   ```
   ```bash
-    docker inspect <container_name> | grep -i volume : 
+    docker inspect <container_name> | grep -i volume  
+  ```
+```bash
+    docker run --name <container_name> --memory="200mb" --cpus="0.2" ubuntu 
   ```
   ```bash
     docker system prune    : to remove unused objects of docker
