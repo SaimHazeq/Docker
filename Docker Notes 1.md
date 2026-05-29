@@ -447,9 +447,9 @@ CMD ["python", "app.py"]
 - Containers uses our host resources (cpu, mem)
 - By default we don't have any limits for containers
 - We need to set it
-  ```bash
+```bash
   docker run --name <container_name> --memory="200mb" --cpus="0.2" ubuntu
-  ```
+```
 ---
 
 ## 🧩 Docker Compose File (YAML only)
