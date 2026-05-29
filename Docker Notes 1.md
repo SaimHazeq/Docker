@@ -448,7 +448,7 @@ CMD ["python", "app.py"]
 - By default we don't have any limits for containers
 - We need to set it
   ```bash
-    docker run --name <container_name> --memory="200mb" --cpus="0.2" ubuntu
+  docker run --name <container_name> --memory="200mb" --cpus="0.2" ubuntu
   ```
 ---
 
