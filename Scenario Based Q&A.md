@@ -117,5 +117,3 @@ To optimize a Dockerfile for faster CI/CD builds:
 - Use `.dockerignore` to exclude unnecessary files (e.g., `.git`, `tests/`) from the build context.
 - Monitor build times in Jenkins to confirm improvements.
 
-
-*Contributed by Lahiru Galhena*
