@@ -13,10 +13,10 @@
      
 **Docker solves this by packaging the application with everything it needs.**   
 
-### 2. What is a container?  
-- **A container is a lightweight, isolated environment that packages an application along with its dependencies, libraries, and runtime.**
-- **It ensures the application runs consistently across development, testing, and production environments.**
-- **In Docker, containers are created from image and share the Host OS kernel, making them faster and more resource-efficient than virtual machines.**
+### 2. What is a container?     
+**A container is a lightweight, isolated environment that packages an application along with its dependencies, libraries, and runtime.**    
+**It ensures the application runs consistently across development, testing, and production environments.**    
+**In Docker, containers are created from image and share the Host OS kernel, making them faster and more resource-efficient than virtual machines.**   
 
 ### 3. What is a Docker image?  
 **A Docker image is a read-only template that contains application code, runtime, libraries, dependencies, and configuration required to run an application.**    
@@ -58,7 +58,8 @@
 **Docker Client is a command-line interface(CLI) that allows users to interact with Docker. It sends commands like `docker build`, `docker pull`, and `docker run` to the Docker daemon through the REST API.**
 
 ### 10.Explain Docker architecture.  
-**Docker Architecture follows a client-server architecture consisting of three main components:**  
+**Docker Architecture follows a client-server architecture consisting of three main components:**     
+    
 **1. Docker Client: Accepts user commands such as `docker build`, `docker pull` and `docker run`.**  
 
 **2. Docker Daemon: Receives request from the client and manages images, containers, network, and volumes.**   
