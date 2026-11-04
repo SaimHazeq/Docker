@@ -14,9 +14,11 @@
 **Docker solves this by packaging the application with everything it needs.**   
 
 ### 2. What is a container?     
-**A container is a lightweight, isolated environment that packages an application along with its dependencies, libraries, and runtime.**    
-**It ensures the application runs consistently across development, testing, and production environments.**    
-**In Docker, containers are created from image and share the Host OS kernel, making them faster and more resource-efficient than virtual machines.**   
+**A container is a lightweight, isolated environment that packages an application along with its dependencies, libraries, and runtime.**                  
+     
+**It ensures the application runs consistently across development, testing, and production environments.**               
+            
+**In Docker, containers are created from image and share the Host OS kernel, making them faster and more resource-efficient than virtual machines.**           
 
 ### 3. What is a Docker image?  
 **A Docker image is a read-only template that contains application code, runtime, libraries, dependencies, and configuration required to run an application.**    
