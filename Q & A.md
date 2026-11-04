@@ -1,6 +1,24 @@
-What is Docker?   
-What is a container?   
-What is a Docker image?   
+### 1. What is Docker?
+**Docker is an open-source containerization platform used to build, package, and run applications inside containers.**     
+   
+**A container includes:**   
+- Application code
+- Runtime
+- System libraries
+- Dependencies
+- Configuration
+**This ensures the application runs consistently across different environments such as development, testing and production.**     
+      
+**Before Docker, developers often faced the "it works on my machine" problem, where an application runs locally but fails in another environment due to dependency differences.**       
+     
+**Docker solves this by packaging the application with everything it needs.**   
+
+### 2. What is a container?  
+- **A container is a lightweight, isolated environment that packages an application along with its dependencies, libraries, and runtime.**
+- **It ensures the application runs consistently across development, testing, and production environments.**
+- **In Docker, containers are created from image and share the Host OS kernel, making them faster and more resource-efficient than virtual machines.**
+
+### What is a Docker image?   
 What is a Dockerfile?   
 What is Docker Engine?   
 What are the main components of Docker architecture?    
