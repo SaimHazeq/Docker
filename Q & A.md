@@ -68,9 +68,24 @@
 
 **3. Docker Registry: Stores images, such as Docker Hub and Amazon ECR.**  
 
-### 11.How does Docker achieve isolation?    
-Difference between container runtime vs container engine.   
-Difference between CMD vs ENTRYPOINT.    
+### 11.How does Docker achieve isolation? 
+**Docker achieves isolation using Linux Kernel features such as Namespaces and Control Group(cgroups).**  
+
+**1. Namespaces: Provide isolation for processes, networking, hostnames, users, and file systems.**   
+
+**2. cgroups: Control and limit resource usage such as CPU, memory, and disk I/O.**  
+
+**3. Union File System: Provides separate container filesystem layers.**  
+
+### 12. Difference between container runtime vs container engine. 
+**Container engine**  
+- Manages the overall container lifecycle, including building images, networking, and storage.
+**Container runtime**
+- Responsible for actually creating and running containers. For example, Docker engine uses containerd and runc to execute containers.
+
+### Difference between CMD vs ENTRYPOINT. 
+
+
 What is multi-stage build?   
 How do you inspect a Docker image?    
 How do you scan Docker images for vulnerabilities?    
