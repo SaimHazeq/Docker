@@ -80,25 +80,95 @@
 ### 12. Difference between container runtime vs container engine. 
 **Container engine**  
 - Manages the overall container lifecycle, including building images, networking, and storage.
+    
 **Container runtime**
 - Responsible for actually creating and running containers. For example, Docker engine uses containerd and runc to execute containers.
 
-### Difference between CMD vs ENTRYPOINT. 
+### 13. Difference between CMD vs ENTRYPOINT. 
+**CMD**   
+- Provides default commands or arguments that can be overridden when running a container.
 
+**ENTRYPOINT**   
+- Defines the main executable that runs when the container starts. It can not be overridden.
 
-What is multi-stage build?   
-How do you inspect a Docker image?    
-How do you scan Docker images for vulnerabilities?    
-Container crashes after starting — how do you debug?   
-Container exits immediately — why?     
-What is Docker networking?  
-What are Docker network types?   
-Difference between bridge, host, overlay, macvlan networks.   
-What is the default network in Docker?   
-What is port mapping?   
-How do containers communicate with each other?   
-How does Docker networking work in multi-host environments?   
-Two containers cannot communicate — how do you troubleshoot?   
+### 14. What is multi-stage build? 
+**Multi-stage build is a Docker feature that allows us to use multiple `FROM` instructions in a single Dockerfile to separate the build environment from the runtime environment.**  
+
+**It helps reduce Docker image size by including only the required application files and dependencies in the final image, excluding unnecessary build tools.**
+
+### 15. How do you inspect a Docker image?  
+**We use `docker inspect` command to view detailed information about a Docker image, including its configuration, layers, environment variables, architecture, and metadata.**
+
+### 16. How do you scan Docker images for vulnerabilities?
+**We scan Docker images for security vulnerabilities using tools like Trivy, and Docker Scout.**   
+`trivy image nginx:latest`   
+
+**It identifies vulnerabilities in OS packages, application dependencies, and libraries, categorizing them by severity (Critical, High, Medium, Low).**
+
+### 17. Container crashes after starting — how do you debug?
+** If a container crashes after starting, I first check its status using `docker ps -a`, then analyze application logs using `docker logs`.**    
+
+**I inspect the exit code and container configuration using `docker inspect`.**  
+
+**I also check resource limits, environment variables, dependencies, and startup commands to identify the root cause.**  
+
+**After fixing the issue, I restart the container any verify that the application is running properly.**
+
+### 18. Container exits immediately — why? 
+**A container exits immediately when its main process finishes or crashes.**  
+
+**I check the container status using `docker ps -a`, review logs using `docker logs`, and inspect the exit code and configuration using `docker inspect`.**   
+
+**Then I identify whether the issue is related to the startup command, application errors, missing dependencies, or resource constraints.**
+
+### 19. What is Docker networking and network types?  
+**Docker networking allows containers to communicate with each other and external network.**  
+
+**Docker provides 4 main network types:**  
+- **Bridge: Allows containers on the same Docker host to communicate with each other.(It's a default Network)**
+- **Host: Shares the host machines's network namespace.**
+- **None: Disables container networking.**
+- **Overlay: Enables communication between containers running on different Docker hosts.**
+- **Macvlan: Assigns containers their own MAC addresses, making them appear as physical devices on the network.**
+   
+### 20. What is port mapping?   
+**Port mapping allows us to expose a container's application to the outside world by mapping a host port to a container port.**  
+  
+**For example, `-p 8080:80` maps host port 8080 to container port 80.**
+  
+### 21. How do containers communicate with each other?  
+**Container communicate with each other through Docker networks using container IP addresses or container names (DNS).**
+
+### 22. How does Docker networking work in multi-host environments?  
+**Docker uses Overlay Networking to enable communication between containers running on different Docker hosts.**   
+
+**It creates a virtual network across multiple hosts, allowing containers to communicate securely as if they were on the same network.**
+
+### 23. Two containers cannot communicate — how do you troubleshoot? 
+**If two containers cannot communicate, I troubleshoot the Docker network, container connectivity, ports and firewall rules.**   
+   
+**Troubleshooting Steps**
+
+**1. Check running containers**
+`docker ps`
+
+**2. Check network configuration**
+`docker network ls
+docker network inspect my-network`
+
+**3. Verify both containers are on the same network.**   
+
+**4. Test connectivity**
+`docker exec container1 ping container2`
+
+**5. Check application listening ports**
+`docker exec container2 ss -tulnp`
+
+**6. Check container logs**
+`docker logs container2`
+
+**7. Verify firewall rules and network policies.**
+
 Why do we need Docker volumes?   
 Difference between Volume vs Bind Mount.    
 What is tmpfs mount?   
