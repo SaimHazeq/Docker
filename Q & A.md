@@ -22,9 +22,7 @@
 **In Docker, containers are created from image and share the Host OS kernel, making them faster and more resource-efficient than virtual machines.**           
 
 ### 3. What is a Docker image?  
-**A Docker image is a read-only template that contains application code, runtime, libraries, dependencies, and configuration required to run an application.**    
-
-**It is used to create Docker Containers>**   
+**A Docker image is a read-only template that contains application code, runtime, libraries, dependencies, and configuration required to run an application.**       
 
 **Example: You build a Docker image for a Python application, push it to Amazon ECR, and use that image to create containers in Docker or Kubernetes.**
 
@@ -107,7 +105,7 @@
 **It identifies vulnerabilities in OS packages, application dependencies, and libraries, categorizing them by severity (Critical, High, Medium, Low).**
 
 ### 17. Container crashes after starting — how do you debug?
-** If a container crashes after starting, I first check its status using `docker ps -a`, then analyze application logs using `docker logs`.**    
+**If a container crashes after starting, I first check its status using `docker ps -a`, then analyze application logs using `docker logs`.**    
 
 **I inspect the exit code and container configuration using `docker inspect`.**  
 
@@ -184,6 +182,7 @@
 - **Managed by Docker and are commonly used for persistent application data, especially in production.**
 - **Store in Docker's storage directory.**
 - **Easier to manage and backup.**
+  
 **Bind Mount**
 - **Directly  map a specific host directory of file into a container and are commonly used during development to share source code or configuration files.**
 - **Used a specific host filesystem path.**
@@ -196,7 +195,8 @@
 **I backup Docker volumes using a temporary container with the `tar` command. I mount the volume inside the container, compress its data into a backup archive, and store it on the host machine or external storage like Amazon S3.**    
 **Example**  
   
-```docker run --rm \
+```
+docker run --rm \
   -v my-volume:/data \
   -v $(pwd):/backup \
   ubuntu tar czf /backup/volume-backup.tar.gz -C /data .
