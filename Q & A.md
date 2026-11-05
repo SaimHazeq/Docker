@@ -6,7 +6,7 @@
 - Runtime
 - System libraries
 - Dependencies
-- Configuration
+- Configuration   
 **This ensures the application runs consistently across different environments such as development, testing and production.**     
       
 **Before Docker, developers often faced the "it works on my machine" problem, where an application runs locally but fails in another environment due to dependency differences.**       
