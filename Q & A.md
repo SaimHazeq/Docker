@@ -154,8 +154,9 @@
     
 **2. Check network configuration**   
 ```docker network ls     
-docker network inspect my-network```      
-   
+docker network inspect my-network      
+```
+      
 **3. Verify both containers are on the same network.**    
    
 **4. Test connectivity**    
