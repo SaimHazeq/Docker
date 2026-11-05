@@ -149,25 +149,19 @@
    
 **Troubleshooting Steps**
 
-**1. Check running containers**
-`docker ps`
-
-**2. Check network configuration**
-`docker network ls
-docker network inspect my-network`
-
-**3. Verify both containers are on the same network.**   
-
-**4. Test connectivity**
-`docker exec container1 ping container2`
-
-**5. Check application listening ports**
-`docker exec container2 ss -tulnp`
-
-**6. Check container logs**
-`docker logs container2`
-
-**7. Verify firewall rules and network policies.**
+**1. Check running containers**   
+`docker ps`   
+**2. Check network configuration**   
+`docker network ls   
+docker network inspect my-network`   
+**3. Verify both containers are on the same network.**      
+**4. Test connectivity**    
+`docker exec container1 ping container2`      
+**5. Check application listening ports**   
+`docker exec container2 ss -tulnp`   
+**6. Check container logs**   
+`docker logs container2`    
+**7. Verify firewall rules and network policies.**   
 
 Why do we need Docker volumes?   
 Difference between Volume vs Bind Mount.    
